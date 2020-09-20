@@ -1,0 +1,77 @@
+.dialibre {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  overflow: hidden;
+
+  @include displayFlex(center, center, column);
+  background-color: color(primario);
+
+  .targeta {
+    position: relative;
+    padding: 100px 80px;
+    background-color: color(segundario);
+    @include displayFlex(center, center, column);
+
+    .alerta {
+      z-index: 1111;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-size: 140px;
+      font-weight: 700;
+      color: transparent;
+
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        background: linear-gradient(
+          to left,
+          #fe6500,
+          #0f0f0f,
+          #0f0f0f,
+          #fe6500
+        );
+        background-size: 300%;
+        overflow: hidden;
+        animation: animate404 20s linear infinite;
+        height: 100%;
+        width: 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @keyframes animate404 {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 300% 0;
+        }
+      }
+    }
+
+    .titulo {
+      font-size: 28px;
+      color: color(blanco);
+      text-transform: uppercase;
+      margin: 40px 0;
+    }
+
+    .parrafo {
+      font-size: 18px;
+      text-align: center;
+      color: color(lt01);
+      strong {
+        color: color(primario);
+      }
+    }
+
+    @include responsivemin(900px){
+      .alerta{font-size: 240px;}
+      .titulo{font-size: 32px;}
+      .parrafo{font-size: 24px;}
+    }
+  }
+
+}

@@ -1,0 +1,174 @@
+.contenedor-ordenes {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    padding-top: 100px;
+
+    display: grid;
+    row-gap: 5rem;
+    place-items: center;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 1fr 200px;
+    grid-template-areas:
+    '. ordenes .'
+    'piedep piedep piedep';
+
+    .ordenes {
+        grid-area: ordenes;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: color(dk01);
+        border: 1px solid color(primario);
+        
+        table {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+
+            thead {
+                width: 100%;
+                height: 100%;
+
+                tr{
+                    th{
+                        cursor: default;
+                        background-color: color(dk01);
+                        color: color(primario);
+                        letter-spacing: 2px;
+                        padding: 20px;
+                        &:nth-child(1){background-color: color(primario); color: color(blanco);}
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+                height: 100%;
+                background-color: color(segundario);
+                color: color(lt01);
+                tr{
+                    td{
+                        padding: 0 10px;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        .pnombre{
+                            margin: 0 auto;
+                            text-align: center;
+                            font-weight: 700;
+                            color: color(blanco);
+                            padding: 5px 0;
+                        }
+                        .pcantidad{padding: 5px 0;}
+
+                        &:nth-child(4){
+                            .estatus{
+                                cursor: default;
+                                font-size: 16px;
+                                color: color(blanco);
+                                font-weight: 700;
+                                border-radius: 3px;
+                                padding: 10px 5px;
+                            }
+                            
+                            .estatus.En.proceso{
+                                cursor: wait;
+                                background-color: #cfa828;
+                            }
+                            .estatus.En.preparación{
+                                cursor: wait;
+                                background-color: #2d8dcc;
+                                font-size: 14px;
+                            }
+                            .estatus.Listo{
+                                background-color: #e06f23;
+                            }
+                            .estatus.Enviado{
+                                background-color: #8c5ab4;
+                            }
+                            .estatus.Cancelado{
+                                cursor: not-allowed;
+                                background-color: #bd3434;
+                            }
+                            .estatus.Entregado{
+                                background-color: #55a152;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsivemin(1200px){
+        .ordenes {
+            width: 1150px;
+        }
+    }
+
+    @include responsivemin(650px){
+        .contenedor-ordenes {
+            grid-template-columns: 0fr 1fr 0fr;
+        }
+    }
+    
+
+    .piedep {
+        grid-area: piedep;
+        width: 100%;
+        height: 100%;
+        padding: 40px 20px;
+        background-color: color(dk02);
+        @include shadowBox(0, -20px, 12px, rgba(0,0,0,.25));
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5px;
+
+        .direccion {
+            width: 100%;
+            height: 100%;
+            @include displayFlex(space-between, flex-start, column);
+
+            .titulo {
+                font-size: 16px;
+                text-align: left;
+                color: color(blanco);
+
+                .link {
+                    text-decoration: none;
+                    font-size: 14px;
+                    text-align: left;
+                    color: color(lt02);
+                    &:hover{color: color(primario);}
+                }
+            }
+        }
+
+        .informacion {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: .3fr 1fr;
+            row-gap: 10px;
+            text-align: justify;
+
+            .titulo {
+                width: 100%;
+                font-size: 18px;
+                color: color(primario);
+            }
+            .parrafo {
+                width: 100%;
+                font-size: 15px;
+                color: color(lt01);
+            }
+        }
+    }
+}

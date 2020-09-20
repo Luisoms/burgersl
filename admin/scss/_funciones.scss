@@ -1,0 +1,72 @@
+// MIXINS Y FUNCIONES
+
+
+// VARIABLES:
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@function font($font-name) {
+    @return map-get($fonts, $font-name);
+}
+
+@mixin fontAwesome1($icon,$size,$color) {
+    &::before {
+        content: $icon;
+        display: inline-block;
+        color: $color;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900; font-style: normal; font-variant: normal;
+        font-size: $size;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+@mixin fontAwesome2($icon,$size,$color) {
+    &::before {
+        content: $icon;
+        display: inline-block;
+        color: $color;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400; font-style: normal; font-variant: normal;
+        font-size: $size;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+} //5 @include fontAwesome1('\f007',24px,color(primario));
+
+
+// SOMBRAS:
+
+@mixin shadowBox($x,$y,$b,$c){
+    box-shadow: $x $y $b $c;
+}
+
+@mixin shadowText($x,$y,$b,$c){
+    text-shadow: $x $y $b $c;
+}
+
+
+// ADAPTABILIDAD:
+
+@mixin responsivemin ($value) {
+    @media (min-width: $value){
+        @content;
+    }
+}
+
+@mixin responsivemax ($value) {
+    @media (max-width: $value){
+        @content;
+    }
+}
+
+// POSICIONAMIENTO
+
+@mixin displayFlex($justify,$align,$direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}

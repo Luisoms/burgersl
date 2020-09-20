@@ -1,0 +1,217 @@
+.contenedor-menu{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+
+    display: grid;
+    row-gap: 2rem;
+    place-items: center;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 600px 1fr 200px;
+    grid-template-areas:
+    '. carrito .'
+    '. comprar .'
+    'piedep piedep piedep';
+
+    @import './ingresar';
+    
+    @import './registrar';
+
+    @import './carrito';
+
+    .comprar {
+        grid-area: comprar;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        background-color: color(dk01);
+        border-radius: 1px;
+        @include shadowBox(0px, 0px, 35px, color(sombra));
+        //box-shadow: 0 0 35px 10px rgba(0, 0, 0, .3); 		REVISAR
+
+        display: grid;
+        row-gap: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr 30px;
+
+        .titulo {
+            cursor: default;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding-left: 20px;
+            /* font-family: font(titulo); */
+            font-size: 1.6em;
+            font-weight: 600;
+            color: color(blanco);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0px;
+                width: 4px;
+                height: 20px;
+                background-color: color(primario);
+            }
+        }
+
+        .comprar-grid {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-rows: minmax(380px, 1fr);
+            gap: 40px;
+    
+            .carta {
+                cursor: cell;
+                overflow: hidden;
+                text-decoration: none;
+                border-style: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                transition: 250ms;
+                background-color: color(blanco);
+                border-radius: 3px;
+                @include shadowBox(6px, 10px, 10px, color(sombra));
+
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 200px 180px;
+
+                &:hover{
+                    transform: translateY(-5px);
+                   @include shadowBox(6px, 10px, 20px, color(sombra));
+                    transition: 250ms;
+
+                    .carta-contenido .nombre {
+                        color: color(primario); transition: 250ms;
+                    }
+                }
+
+                .carta-imagen {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+
+                    .precio {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        padding: 2px 5px;
+                        text-align: left;
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: color(blanco);
+                        background-color: transparentize(color(cash), .25);
+                        border-top-right-radius: 5px;
+                    }
+                }
+
+                .carta-contenido {
+                    padding: 20px 10px;
+                    width: 100%;
+                    height: 100%;
+                    @include displayFlex(space-around, center, column);
+
+                    .nombre {
+                        margin-bottom: 10px;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 28px;
+                        font-size: 24px;
+                        text-align: center;
+                        color: color(dk01);
+                        font-weight: 900;
+                    }
+
+                    .descripcion{
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        padding: 0;
+                        font-size: 16px;
+                        text-align: center;
+                        color: color(dk02);
+                    }
+
+                    /* .pricio-bloque {
+                        width: 100%;
+                        height: 100%;
+                        @include displayFlex(center, center, column);
+
+                        .btn{
+                            display: inline-block;
+                            border: none;
+                            font-size: 22px;
+                            text-align: center;
+                            font-weight: 800;
+                            color: color(blanco);
+                            background-color: color(primario);
+                            padding: 10px 20px;
+                        }
+                    } */
+                }
+            }
+        }
+    }
+
+    .piedep {
+        grid-area: piedep;
+        width: 100%;
+        height: 100%;
+        padding: 40px 20px;
+        background-color: color(dk02);
+        @include shadowBox(0, -20px, 12px, rgba(0,0,0,.25));
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5px;
+
+        .direccion {
+            width: 100%;
+            height: 100%;
+            @include displayFlex(space-between, flex-start, column);
+
+            .titulo {
+                font-size: 16px;
+                text-align: left;
+                color: color(blanco);
+
+                .link {
+                    text-decoration: none;
+                    font-size: 14px;
+                    text-align: left;
+                    color: color(lt02);
+                    &:hover{color: color(primario);}
+                }
+            }
+        }
+
+        .informacion {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: .3fr 1fr;
+            row-gap: 10px;
+            text-align: justify;
+
+            .titulo {
+                width: 100%;
+                font-size: 18px;
+                color: color(primario);
+            }
+            .parrafo {
+                width: 100%;
+                font-size: 15px;
+                color: color(lt01);
+            }
+        }
+    }
+}

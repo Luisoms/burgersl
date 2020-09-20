@@ -1,0 +1,401 @@
+@charset "UTF-8";
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  70% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  70% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes glitch {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 3px);
+            transform: translate(-3px, 3px);
+  }
+  40% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  60% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  80% {
+    -webkit-transform: translate(3px, -3px);
+            transform: translate(3px, -3px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 3px);
+            transform: translate(-3px, 3px);
+  }
+  40% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  60% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  80% {
+    -webkit-transform: translate(3px, -3px);
+            transform: translate(3px, -3px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@-webkit-keyframes glitchTwo {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(3px, -3px);
+            transform: translate(3px, -3px);
+  }
+  40% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  60% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  80% {
+    -webkit-transform: translate(-3px, 3px);
+            transform: translate(-3px, 3px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes glitchTwo {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(3px, -3px);
+            transform: translate(3px, -3px);
+  }
+  40% {
+    -webkit-transform: translate(3px, 3px);
+            transform: translate(3px, 3px);
+  }
+  60% {
+    -webkit-transform: translate(-3px, -3px);
+            transform: translate(-3px, -3px);
+  }
+  80% {
+    -webkit-transform: translate(-3px, 3px);
+            transform: translate(-3px, 3px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@-webkit-keyframes errormsg {
+  0% {
+    left: -100%;
+    opacity: 1;
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes errormsg {
+  0% {
+    left: -100%;
+    opacity: 1;
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@font-face {
+  font-family: 'titulo-logo';
+  src: url(../fonts/titulo-logo.otf);
+}
+
+@font-face {
+  font-family: 'firma';
+  src: url(../fonts/firma.otf);
+}
+
+@font-face {
+  font-family: 'principal';
+  src: url(../fonts/principal.ttf);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #363636;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: #363636;
+  color: #ffffff;
+  /* scrollbar-width: none; */
+  /* &.blocked {
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+        scrollbar-width: none;
+        overflow: -moz-hidden-unscrollable;
+    } */
+}
+
+body::-webkit-scrollbar {
+  background: #0f0f0f;
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #FE6500;
+  border-radius: 1px;
+}
+
+body .navbar {
+  background-color: #181818;
+}
+
+body .navbar .navbar-brand {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #181818;
+}
+
+body .navbar .navbar-brand .logo {
+  padding: 2px 0;
+  width: 100%;
+  height: 48px;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+body .left-sidebar {
+  background-color: #181818;
+}
+
+body .left-sidebar .sidebar-nav #sidebarnav {
+  background-color: #181818;
+}
+
+body .btnacciones {
+  width: 100%;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .tr .td {
+  padding: 0 10px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+body .tr .td p.pnombre {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 5px 0;
+}
+
+body .tr .td p.pcantidad {
+  padding: 5px 0;
+}
+
+body .tr .td .estatus {
+  cursor: default;
+  font-size: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  padding: 6px 7px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+body .tr .td .estatus.En.proceso {
+  cursor: wait;
+  background-color: #cfa828;
+}
+
+body .tr .td .estatus.En.preparación {
+  cursor: wait;
+  background-color: #2d8dcc;
+  font-size: 14px;
+}
+
+body .tr .td .estatus.Listo {
+  background-color: #e06f23;
+}
+
+body .tr .td .estatus.Enviado {
+  background-color: #8c5ab4;
+}
+
+body .tr .td .estatus.Cancelado {
+  cursor: not-allowed;
+  background-color: #bd3434;
+}
+
+body .tr .td .estatus.Entregado {
+  background-color: #55a152;
+}
+/*# sourceMappingURL=admin.css.map */

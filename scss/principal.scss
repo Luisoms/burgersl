@@ -1,0 +1,300 @@
+@import './animaciones';
+@import './variables';
+@import './funciones';
+
+// EDICIÓN
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Montserrat';
+    outline: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: color(dk01);
+    color: color(blanco);
+    
+    /* scrollbar-width: none; */
+    
+    &::-webkit-scrollbar {
+        background: color(segundario);
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: color(segundario);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: color(primario);
+        border-radius: 1px;
+    }
+
+    /* &.blocked {
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+        scrollbar-width: none;
+        overflow: -moz-hidden-unscrollable;
+    } */
+
+    .mensaje {
+        z-index: 2000;
+        position: fixed;
+        top: 50%; left: -100%;
+        transform: translate(-50%,-50%);
+        padding: 20px 0;
+        height: 100px;
+        width: 100%;
+        background-color: color(segundario);
+        color: color(blanco);
+        font-size: 28px;
+        font-weight: 600;
+        @include displayFlex(center,center,row);
+        animation: errormsg 6000ms cubic-bezier(.51,.54,0,1.02) forwards;
+    }
+    
+    .navbar {
+        z-index: 1100;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: color(segundario);
+        padding: 10px 20px;
+        @include shadowBox(0,7px,10px, color(sombra));
+        display: grid;
+        grid-template-columns: 50px 1fr 25px;
+        grid-template-areas: 'logo . hamburguesa';
+        place-items: center;
+        transition: 300ms ease;
+
+        .logo {
+            grid-area: logo;
+            cursor: pointer;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background: url(../images/logo/logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+
+        .btnhb {
+            grid-area: hamburguesa;
+            position: relative;
+            cursor: pointer;
+            width: 25px;
+            height: 17px;
+            border: none;
+            outline: none;
+            background: transparent;
+            @include displayFlex(space-between,center,column);
+            
+            .hamburguesa {
+                width: 100%;
+                height: 3px;
+                background-color: color(blanco);
+                border-radius: 1px;
+                transition: 250ms;
+            }
+            &:hover .hamburguesa {background-color: color(primario); transition: 250ms;}
+        }
+
+        .menu {
+            position: absolute;
+            top: 70px; right: 20px;
+            width: 160px;
+            height: 0;
+            visibility: hidden;
+            @include displayFlex(space-between,center,column);
+            background-color: color(segundario);
+            transition: 300ms linear;
+            border-radius: 2px;
+            
+            .link {
+                cursor: pointer;
+                text-decoration: none;
+                z-index: 1111;
+                position: relative;
+                visibility: hidden;
+                opacity: 0;
+                padding: 10px 0;
+                font-size: 16px;
+                color: color(blanco);
+                font-weight: 500;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                transition: 100ms ease;
+
+                /* &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: -20px;
+                    width: 0;
+                    height: 100%;
+                    transition: 250ms 100ms linear;
+                    background-color: color(primario);
+                    border-radius: 1px;
+                    z-index: -1;
+                } */
+                &:hover{
+                    transition: color 250ms ease;
+                    color: transparentize(color(blanco), 0.5);
+                }
+
+                &.usuarioN {
+                    cursor: default;
+                    z-index: 1111;
+                    position: relative;
+                    visibility: hidden;
+                    width: 100%;
+                    opacity: 0;
+                    color: color(primario);
+                    background-color: color(dk01);
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    padding: 15px 0;
+                    text-align: center;
+                    font-weight: 800;
+                    font-size: 18px;
+                    transition: 100ms ease;
+                }
+            }
+        }
+
+        .menu.open {
+            transition: 300ms linear;
+            visibility: visible;
+            height: 190px;
+
+            .link{
+                transition: opacity 500ms ease 300ms;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    @include responsivemin(768px) {
+        .navbar{
+            display: grid;
+            grid-template-areas: 'logo . menu';
+            grid-template-columns: 50px 1fr 500px;
+            
+            .logo{grid-area: logo;}
+
+            .btnhb {
+                display: none;
+                visibility: hidden;
+            }
+            
+            .menu {
+                grid-area: menu;
+                transition: unset;
+                position: relative;
+                visibility: visible;
+                top: 0; right: 0;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                @include displayFlex(space-between,center,row);
+                
+                .link {
+                    text-decoration: none;
+                    transition: unset;
+                    visibility: visible;
+                    display: inline-block;
+                    opacity: 1;
+                    transition: 250ms ease;
+                    padding: 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 3px;
+                    text-transform: capitalize;
+                    text-align: center;
+
+                    &:hover{color:color(primario); transition: 250ms ease;}
+
+                    &.stuno {
+                        border: 1px solid color(blanco);
+                        border-radius: 2px;
+                        padding: 6px 11px;
+                        font-weight: 600;
+                        transition: 250ms linear;
+                        &:hover{border-color: color(primario); transform: scale(1.04); transition: 250ms linear;}
+                    }
+                    &.stdos {
+                        background-color: color(primario);
+                        border-radius: 2px;
+                        padding: 8px 14px;
+                        font-weight: 600;
+                        transition: 250ms linear;
+                        &:hover{border-color: color(primario); color: color(blanco); transform: scale(1.05); transition: 250ms linear;}
+                    }
+                    &.sttres{
+                        color: color(lt01);
+                        transition: 250ms ease;
+                        &:hover{color:color(primario); transition: 250ms ease;}
+                    }
+
+                    &.usuarioN {
+                        width: auto;
+                        display: inline-block;
+                        visibility: visible;
+                        opacity: 1;
+                        text-transform: capitalize;
+                        padding: 5px 14px;
+                        text-align: center;
+                        font-weight: 700;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }            
+    }
+
+    .btncarrito {
+        cursor: pointer;
+        z-index: 2000;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        @include displayFlex(center,center,row);
+        font-size: 20px;
+        line-height: 0px;
+        border-radius: 50%;
+        background-color: color(primario);
+        box-shadow: 0 0 15px 5px transparentize(color(primario), 0.85),
+                    0 0 25px 10px transparentize(color(primario), 0.85);
+                    
+        animation: float 3000ms ease-in-out infinite;
+        transition: 250ms ease;
+        &:hover{
+            font-size: 22px;
+            transition: 250ms ease;
+        }
+    }
+    @import './pages/dialibre';
+    @import './pages/index';
+    @import './pages/menu';
+    @import './pages/ordenes';
+    @import './pages/chequear';
+}

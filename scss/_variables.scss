@@ -1,0 +1,28 @@
+@import './fuentes';
+
+// COLORES
+
+$colors: (
+    //original:   #ff7b00,
+    primario:   #FE6500,
+    segundario: #0f0f0f,
+    blanco:     #ffffff,
+    cash:       #599125,
+    sombra:       rgba(0,0,0,.5),
+
+    // ESCALA DE GRISES
+    dk01:       #181818,
+    dk02:       #363636,
+    lt01:       #a0a0a0,
+    lt02:       #c2c2c2
+);
+
+// FUENTES
+
+$fonts: (
+    titulo-logo: 'titulo-logo',
+    //titulo-brush: 'titulo-brush',
+    titulo: 'titulo',
+    firma: 'firma'
+    // Todo lo demas es Montserrat
+);

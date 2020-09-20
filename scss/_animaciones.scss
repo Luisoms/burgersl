@@ -1,0 +1,104 @@
+@keyframes type{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 100%;
+    }
+    70%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-3px, 3px);
+    }
+
+    40% {
+        transform: translate(-3px, -3px);
+    }
+
+    60% {
+        transform: translate(3px, 3px);
+    }
+
+    80% {
+        transform: translate(3px, -3px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitchTwo {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(3px, -3px);
+    }
+
+    40% {
+        transform: translate(3px, 3px);
+    }
+
+    60% {
+        transform: translate(-3px, -3px);
+    }
+
+    80% {
+        transform: translate(-3px, 3px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotateX(0deg); 
+    }
+    100%{
+        
+        transform: rotateX(360deg); 
+    }
+}
+
+@keyframes errormsg {
+    0%{
+        left: -100%;
+        opacity: 1;
+    }
+    50%{
+        left: 50%;
+        opacity: 1;
+    }
+    100%{
+        
+        left: -100%;
+        opacity: 0;
+    }
+}
