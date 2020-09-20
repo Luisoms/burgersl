@@ -13,11 +13,16 @@
 
     $array_codificado = UtilHelper::arrayEncode($p_array);
     
-    if (isset($_POST['comprar'])) {
+    if (isset($_POST['comprar'])) 
+    {
         $modalidad = $_POST['modalidad'];
         $nreferencia = $_POST['numreferencia'];
 
         $sql = "INSERT INTO ordenes(u_id,modalidad,numreferencia,p_id,carrito,precio) VALUE('" . $_SESSION["user_id"] . "','" . $modalidad . "','" . $nreferencia. "','" .$id_total ."','". $array_codificado . "','" . $precio_total . "')";
-        mysqli_query($db, $sql);
+        $exito = mysqli_query($db, $sql);
+    }
+    
+    if ($exito) {
+        header("location:ordenes.php");
     }
 ?>

@@ -30,18 +30,6 @@
     <link href="scss/principal.css" rel="stylesheet">
     <script src="./js/tools/dialibre.js"></script>
 
-    <!-- <script>
-        $(document).ready(function() {
-            var productCount = 6;
-            $('#mostrarMas').click(function() {
-                productCount = productCount + 3;
-                $('#comprar-menu').load('masproductos.php', {
-                    productNewCount: productCount
-                });
-            });
-        });
-    </script> -->
-
 </head>
 
 <body class="home">

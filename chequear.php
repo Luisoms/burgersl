@@ -71,7 +71,7 @@ if (empty($_SESSION["user_id"])) {
 
         <div class="contenedor-c">
 
-            <form class="formulario-chequear" method="post" action="productos.php">
+            <form class="formulario-chequear" method="post" action="">
  
                 <span class="tituloResumen">Resumen de Compra</span>
  

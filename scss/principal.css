@@ -233,6 +233,11 @@
   src: url(../fonts/principal.ttf);
 }
 
+@font-face {
+  font-family: 'texto';
+  src: url(../fonts/texto.ttf);
+}
+
 *,
 *::before,
 *::after {
@@ -242,7 +247,7 @@
           box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: 'Montserrat';
+  font-family: "texto";
   outline: none;
 }
 
