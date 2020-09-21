@@ -79,7 +79,6 @@ else
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th>Cantidad</th>
                             <th>Precio</th>
                             <th>Estatus</th>
                             <th>Fecha</th>
@@ -98,31 +97,26 @@ else
                                 while ($row = mysqli_fetch_array($query_res))
                                 {
                                     $array_deco = UtilHelper::arrayDecode($row['carrito']);
+
+                                    $precio  = $row['precio'];
+                                    $rprecio = number_format($precio,2,",",".");
                         ?>
                                     <tr>
                                         <td data-column="Producto">
                                             <?php
                                                 foreach($array_deco as $producto){
-                                                    echo '<p class="pnombre">', $producto['titulo'] ,'</p>';
+                                                    echo '<p class="producto">', $producto['titulo'] ,'<strong> x ', $producto['cantidad'] ,'</strong></p>';
                                                 }
                                             ?>
                                         </td>
 
-                                        <td data-column="Cantidad">
-                                            <?php 
-                                                foreach($array_deco as $producto){
-                                                    echo '<p class="pcantidad">x ', $producto['cantidad'] ,'</p>';
-                                                } 
-                                            ?>
-                                        </td>
+                                        <td data-column="Precio">Bs <?php echo $rprecio; ?></td>
 
-                                        <td data-column="Precio">Bs <?php echo $row['precio']; ?></td>
-
-                                        <td data-column="Estatus">
+                                        <td width="150" data-column="Estatus">
                                             <span class="estatus <?php echo $row['estatus']; ?>"><?php echo $row['estatus']; ?></span>
                                         </td>
 
-                                        <td data-column="Fecha"> <?php echo $row['fecha']; ?></td>
+                                        <td width="220" data-column="Fecha"> <?php echo $row['fecha']; ?></td>
                                     </tr>
                         <?php 
                                 }
@@ -136,16 +130,56 @@ else
 
             <section class="piedep">
                 <div class="direccion">
-                    <!-- AGREGAR INFORMACION --><span class="titulo">Dirección: UD4 Calle Principal</span>
-                    <!-- AGREGAR INFORMACION --><span class="titulo">Correo: burgerslike@correo.com</span>
-                    <span class="titulo">Telefono: <a class="link" href="tel:02869315048">02869315048</a></span>
+                    <span class="titulo"><strong>Dirección:</strong> Urb. Guaiparo, Av. Centurion</span>
+                    <span class="titulo"><strong>Correo:</strong> burgerslikeca@gmail.com</span>
+                    <span class="titulo"><strong>Telefono:</strong> <a class="link" href="tel:02869315048">02869315048</a></span>
+                    
+                    <div class="redesSociales">
+                        <div class="btnredes">
+
+                            <div class="fac">
+                                <a href="https://www.facebook.com/burgerslike/">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                                </a>
+                            </div>
+
+                            <div class="ins">
+                                <a href="https://www.instagram.com/burgerslike/">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-instagram" aria-hidden="true"></span>
+                                </a>
+                            </div>
+
+                            <div class="wha">
+                                <a href="tel:04141985035">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa l fa-whatsapp" aria-hidden="true"></span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div class="informacion">
                     <span class="titulo">Informacion Adicional</span>
-                    <!-- AGREGAR INFORMACION -->
-                    <p class="parrafo">Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
+                    <p class="parrafo">
+                        En burgers Like, nuestra prioridad es atender a nuestros clientes con 
+                        el mejor servicio por eso nuestro Slogan es "Servicio de reino".<br><br>
+                        No te quedes sin ordenar tu comida. Mantente informado visitando nuestras redes sociales
+                    </p>
                 </div>
+
             </section>
 
         </div>

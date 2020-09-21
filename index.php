@@ -25,7 +25,7 @@
     <link rel="icon" href="#">
     <title>Burgers like</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="scss/principal.css" rel="stylesheet">
     <script src="./js/tools/dialibre.js"></script>
@@ -279,20 +279,29 @@
         
         <section class="inicio">
             <div class="inicio-contenedor">
-                <span class="titulo">Burgers Like</span><br>
-                <!-- AGREGAR INFORMACION --><span class="parrafo">
-                    Disfruta de nuestro excelnte servicio de comida rápida.
-                    Lorem ipsum dolor sit amet consectetur elit.
+                <span class="titulo">Burgers Like</span>
+                <span class="parrafo">
+                    Disfruta de la mejor comida rapida de Ciudad Guayana, 
+                    contamos con servicio de delivery para que puedas degustar  
+                    de la comida en la comodidad de tu hogar
                 </span>
                 <a class="btnin" href="productos.php">Ordena ahora</a>
+
+                <div class="calendario">
+                    <span class="infoDias">
+                        Trabajamos de jueves a domingo de <strong>5:00pm - 10:00pm</strong>
+                    </span>
+                </div>
             </div>
         </section>
 
         <section class="acerca">
             <span class="titulo">Acerca de Burgers Like</span>
-            <!-- AGREGAR INFORMACION --><span class="parrafo">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, necessitatibus.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eaque tempora nostrum distinctio accusantium fuga!.
+            <span class="parrafo">
+                Burgers Like, es una empresa ubicada en Guaiparo San félix .Edo Bolívar.
+                Se dedica a la venta de comida rapida como hamburguesas sencillas, 
+                dobles de pollo y carne, pizzas con distintos contornos. Sus clientes 
+                van desde los mas pequeños hasta los mas adultos.
             </span>
             <span class="firma">Burgers Like</span>
         </section>
@@ -307,11 +316,14 @@
                     while ($r = mysqli_fetch_array($query_res)) {
 
                         if (empty($_SESSION["user_id"]))
-                        {                        
+                        {   
+                            $inicioprecio  = $r['precio'];
+                            $rprecioi = number_format($inicioprecio,2,",",".");
+
                             echo '
                                 <a id="carta" class="carta" onclick="checkIngreso()">
                                     <div class="carta-imagen" style="background-image: url(admin/Pro_img/productos/'. $r['img'].');">
-                                        <span class="precio">Bs ' . $r['precio']. '</span>
+                                        <span class="precio">Bs ' . $rprecioi . '</span>
                                     </div>
                                                             
                                     <div class="carta-contenido">
@@ -344,18 +356,57 @@
 
         <section class="piedep">
             <div class="direccion">
-                <!-- AGREGAR INFORMACION --><span class="titulo">Dirección: UD4 Calle Principal</span>
-                <!-- AGREGAR INFORMACION --><span class="titulo">Correo: burgerslike@correo.com</span>
-                <span class="titulo">Telefono: <a class="link" href="tel:02869315048">02869315048</a></span>
+                <span class="titulo"><strong>Dirección:</strong> Urb. Guaiparo, Av. Centurion</span>
+                <span class="titulo"><strong>Correo:</strong> burgerslikeca@gmail.com</span>
+                <span class="titulo"><strong>Telefono:</strong> <a class="link" href="tel:02869315048">02869315048</a></span>
+                
+                <div class="redesSociales">
+                    <div class="btnredes">
+
+                        <div class="fac">
+                            <a href="https://www.facebook.com/burgerslike/">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span class="fa fa-facebook" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                        <div class="ins">
+                            <a href="https://www.instagram.com/burgerslike/">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span class="fa fa-instagram" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                        <div class="wha">
+                            <a href="tel:04141985035">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span class="fa l fa-whatsapp" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <div class="informacion">
                 <span class="titulo">Informacion Adicional</span>
-                <!-- AGREGAR INFORMACION -->
-                <p class="parrafo">Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
+                <p class="parrafo">
+                    En burgers Like, nuestra prioridad es atender a nuestros clientes con 
+                    el mejor servicio por eso nuestro Slogan es "Servicio de reino".<br><br>
+                    No te quedes sin ordenar tu comida. Mantente informado visitando nuestras redes sociales
+                </p>
             </div>
-        </section>
 
+        </section>
 
     </div>
 

@@ -11,7 +11,7 @@
     function mostrarMensaje($mensaje)
     {
         echo '<span class="mensaje activado">'.$mensaje.'</span>';
-    }    
+    }
 ?>
 
 <head>
@@ -288,18 +288,20 @@
                     {
                         foreach($products as $product)
                         {
+                            $precio  = $product['precio'];
+                            $rpreciop = number_format($precio,2,",",".");
                 ?>
                             <form id="producto-item" class="producto-item" method="post" action='productos.php?p_id=<?php echo $_GET['p_id'];?>&action=add&id=<?php echo $product['p_id']; ?>'>
                                                                 
                                 <div class="producto-img" style="background-image: url(admin/Pro_img/productos/<?php echo $product['img']; ?>);"></div>
                                         
                                 <div class="producto-info">
-                                    <span class="producto-name"><?php echo $product['titulo']; ?></span>
+                                    <span class="producto-name"><?php echo $product['titulo'] ?></span>
                                     <span class="producto-dec"> <?php echo $product['descripcion']; ?></span>
                                 </div>
                                         
                                 <div class="producto-compra"> 
-                                    <span class="producto-precio">Bs <?php echo $product['precio']; ?></span>
+                                    <span class="producto-precio">Bs <?php echo $rpreciop; ?></span>
                                     <div class="producto-cantidad">
                                         <a id="mas" onclick="añadirP();"></a>
                                         <input id="cantidadC" class="cantidad" type="text" autocomplete="null" name="cantidad" value="1" size="2" au/>
@@ -324,19 +326,24 @@
 
                 <div id="cesta" class="cesta">
                     <?php
-                        $precio_total = 0.00;
+                        $rpreciot = 0;
 						
 						foreach ($_SESSION["cart_item"] as $item)
-						{ 
-                            $precio_total += $item["precio"] * $item["cantidad"];
-                            $item_total = $item["precio"] * $item["cantidad"];
+						{
                             $cantidad_total += $item["cantidad"];
+                            
+                            $precio_total += $item["precio"] * $item["cantidad"];
+                            $rpreciot = number_format($precio_total,2,",",".");
+
+                            $item_total = $item["precio"] * $item["cantidad"];
+                            $rprecioc = number_format($item_total,2,",",".");
+
 							?>
 								<div id="producto" class="producto">
 									<span class="p-nombre"><?php echo $item["titulo"]; ?></span>
 									<div class="p-info">
 										<input class="p-cantidad" type="text" value='<?php echo "x".$item["cantidad"]; ?>' >
-										<input class="p-precio" type="text" value='<?php echo "Bs ".$item_total; ?>' >
+										<input class="p-precio" type="text" value='<?php echo "Bs ".$rprecioc; ?>' >
 										<a class="p-borrar" href="productos.php?p_id=<?php echo $_GET['p_id']; ?>&action=remove&id=<?php echo $item["p_id"]; ?>">🗑</a>
 									</div>
 								</div>	
@@ -347,7 +354,7 @@
                                                                                     
                 <div class="infototal">
                     <span class="total">total</span>
-                    <span class="precio"><span>Bs</span><?php echo $precio_total; ?></span>
+                    <span class="precio"><span>Bs</span><?php echo $rpreciot; ?></span>
                     <span class="texto">Envio Gratis</span>
                     <a class="btncheck" href="productos.php?p_id=<?php echo $_GET['p_id'];?>&action=check">Comprar</a>
                 </div>
@@ -366,11 +373,13 @@
                     while ($r = mysqli_fetch_array($query_res)) {
 
                         if (empty($_SESSION["user_id"]))
-                        {                        
+                        {
+                            $productoPrecio  = $r['precio'];
+                            $rprecioPr = number_format($productoPrecio,2,",",".");                      
                             echo '
                                 <a id="carta" class="carta" onclick="checkIngreso()">
                                     <div class="carta-imagen" style="background-image: url(admin/Pro_img/productos/'. $r['img'].');">
-                                        <span class="precio">Bs ' . $r['precio']. '</span>
+                                        <span class="precio">Bs ' . $rprecioPr . '</span>
                                     </div>
                                                             
                                     <div class="carta-contenido">
@@ -403,16 +412,56 @@
 
         <section class="piedep">
             <div class="direccion">
-                <!-- AGREGAR INFORMACION --><span class="titulo">Dirección: UD4 Calle Principal</span>
-                <!-- AGREGAR INFORMACION --><span class="titulo">Correo: burgerslike@correo.com</span>
-                <span class="titulo">Telefono: <a class="link" href="tel:02869315048">02869315048</a></span>
+                <span class="titulo"><strong>Dirección:</strong> Urb. Guaiparo, Av. Centurion</span>
+                <span class="titulo"><strong>Correo:</strong> burgerslikeca@gmail.com</span>
+                <span class="titulo"><strong>Telefono:</strong> <a class="link" href="tel:02869315048">02869315048</a></span>
+                
+                <div class="redesSociales">
+                    <div class="btnredes">
+
+                        <div class="fac">
+                            <a href="https://www.facebook.com/burgerslike/">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span class="fa fa-facebook" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                        <div class="ins">
+                            <a href="https://www.instagram.com/burgerslike/">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span class="fa fa-instagram" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                        <div class="wha">
+                            <a href="tel:04141985035">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span class="fa l fa-whatsapp" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <div class="informacion">
                 <span class="titulo">Informacion Adicional</span>
-                <!-- AGREGAR INFORMACION -->
-                <p class="parrafo">Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
+                <p class="parrafo">
+                    En burgers Like, nuestra prioridad es atender a nuestros clientes con 
+                    el mejor servicio por eso nuestro Slogan es "Servicio de reino".<br><br>
+                    No te quedes sin ordenar tu comida. Mantente informado visitando nuestras redes sociales
+                </p>
             </div>
+
         </section>
 
     </div>

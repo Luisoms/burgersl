@@ -183,7 +183,6 @@
                                                 <th>Usuario</th>
                                                 <th>Pedido</th>
                                                 <th>Precio</th>
-                                                <th>Direccion / Modalidad</th>
                                                 <th>Referencia</th>
                                                 <th>Estatus</th>
                                                 <th>Fecha</th>
@@ -202,6 +201,9 @@
                                                 while ($rows = mysqli_fetch_array($query))
                                                 {
                                                     $array_deco = UtilHelper::arrayDecode($rows['carrito']);
+
+                                                    $precio  = $rows['precio'];
+                                                    $rprecio = number_format($precio,2,",",".");
                                             ?>
                                                     <tr class="tr">
                                                         <td><?php echo $rows['u_nombre']; ?></td>
@@ -214,8 +216,8 @@
                                                             ?>
                                                         </td>
 
-                                                        <td width="130">Bs <?php echo $rows['precio']; ?></td>
-                                                        <td><?php echo $rows['direccion']; ?> / <?php echo $rows['modalidad']; ?></td>
+                                                        <td width="130">Bs <?php echo $rprecio; ?></td>
+                                                        
                                                         <td><?php echo $rows['numreferencia']; ?></td>
 
                                                         <td width="100" class="td">

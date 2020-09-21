@@ -195,12 +195,13 @@
                                             } else {
                                                 while ($rows = mysqli_fetch_array($query)) {
 
-
+                                                    $precio  = $rows['precio'];
+                                                    $rprecio = number_format($precio,2,",",".");
 
                                                     echo '<tr>
                                                             <td>' . $rows['titulo'] . '</td>
-                                                            <td>' . $rows['descripcion'] . '</td>
-                                                            <td>Bs ' . $rows['precio'] . '</td>
+                                                            <td width="250">' . $rows['descripcion'] . '</td>
+                                                            <td>Bs ' . $rprecio . '</td>
                                                             <td>
                                                                 <div style="width:100%;height:100%; margin: 0 auto !important;">
                                                                     <img src="Pro_img/productos/' . $rows['img'] . '" class="img-responsive  radius" style="width:100px;" />

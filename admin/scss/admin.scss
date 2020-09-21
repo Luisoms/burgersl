@@ -105,23 +105,24 @@ body {
 
             .estatus{
                 cursor: default;
-                font-size: 10px;
+                display: block;
+                width: 100%;
+                font-size: calc(3px + 1vmin);
                 color: color(blanco);
                 font-weight: 500;
                 letter-spacing: 1px;
                 border-radius: 3px;
-                padding: 6px 7px;
+                padding: 4px 2px;
                 text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
             }
             
-            .estatus.En.proceso{
+            .estatus.Proceso{
                 cursor: wait;
                 background-color: #cfa828;
             }
-            .estatus.En.preparación{
+            .estatus.Preparación{
                 cursor: wait;
                 background-color: #2d8dcc;
-                font-size: 14px;
             }
             .estatus.Listo{
                 background-color: #e06f23;

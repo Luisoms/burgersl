@@ -72,19 +72,23 @@ if (empty($_SESSION["user_id"])) {
         <div class="contenedor-c">
 
             <form class="formulario-chequear" method="post" action="">
+
+                <?php
+                    $rpreciot = number_format($precio_total,2,",",".");
+                ?>
  
                 <span class="tituloResumen">Resumen de Compra</span>
  
                 <div class="resumen-grid">
                     <span class="tituloCS">Compra Subtotal</span>
-                    <span class="itemTotal"> <?php echo "Bs " . $precio_total; ?></span>
+                    <span class="itemTotal">Bs <?php echo $rpreciot; ?></span>
                         
                     <span class="envioMani">Envio y Manipulación</span>
                     <span class="envioGratis">Envio Gratis</span>
  
                     <span class="tituloTotal">Total</span>
-                    <span class="precioTotal"><?php echo "Bs " . $precio_total; ?></span>
- 
+                    <span class="precioTotal">Bs <?php echo $rpreciot; ?></span>
+                    <div class="hr"></div>
                     <div class="modalidades-compra">
                         <span class="tituloM">Modalidades</span>
 
@@ -100,13 +104,21 @@ if (empty($_SESSION["user_id"])) {
                         
                     </div>
 
-                    <div class="infoBanco"><strong></strong>
-                        <span class="tituloBanco">Transferencia / Pago Movil</span>
-                        <span class="banco"><strong>Banco: </strong>Banesco, cuenta Corriente</span>
-                        <span class="numeroCuenta"><strong>Nº Cuenta: </strong>0134-0567-14-5671017500</span>
-                        <span class="nombre"><strong>Nombre: </strong>Enrique Oliveros</span>
-                        <span class="cedula"><strong>Cédula: </strong>26154164</span>
-                        <span class="telefono"><strong>Número: </strong>04249562821</span>
+                    <div class="infoBanco">
+                        <div class="transferencia">
+                            <span class="tituloBanco">Transferencia</span>
+                            <span class="banco"><strong>Banco: </strong>Mercantil, cuenta Corriente</span>
+                            <span class="numeroCuenta"><strong>Nº Cuenta: </strong>0105-0047-8810-4756-4254</span>
+                            <span class="nombre"><strong>Nombre: </strong>Carlos Mendez</span>
+                            <span class="cedula"><strong>Cédula: </strong>28.272.644</span>
+                        </div>
+
+                        <div class="pagoMobil">
+                            <span class="tituloBanco">Pago Movil</span>
+                            <span class="banco"><strong>Banco: </strong>Mercantil - 0105</span>
+                            <span class="cedula"><strong>Cédula: </strong>28.272.644</span>
+                            <span class="telefono"><strong>Número: </strong>0414-1985035</span>
+                        </div>
                     </div>
  
                     <div class="input">
@@ -115,24 +127,65 @@ if (empty($_SESSION["user_id"])) {
                             <span class="texto">Nº de Referencia Bancaria</span>
                         </label>
                     </div>
+                    <i class="verificacionR">Verifique el Nº de referencia antes de finalizar la compra</i>
                 </div>
- 
+                
                 <button class="comprarBtn" type="submit" onclick="return confirm('¿Estás Seguro?');" name="comprar">Finalizar Compra</button>
  
             </form>
 
             <section class="piedep">
                 <div class="direccion">
-                    <!-- AGREGAR INFORMACION --><span class="titulo">Dirección: UD4 Calle Principal</span>
-                    <!-- AGREGAR INFORMACION --><span class="titulo">Correo: burgerslike@correo.com</span>
-                    <span class="titulo">Telefono: <a class="link" href="tel:02869315048">02869315048</a></span>
+                    <span class="titulo"><strong>Dirección:</strong> Urb. Guaiparo, Av. Centurion</span>
+                    <span class="titulo"><strong>Correo:</strong> burgerslikeca@gmail.com</span>
+                    <span class="titulo"><strong>Telefono:</strong> <a class="link" href="tel:02869315048">02869315048</a></span>
+                    
+                    <div class="redesSociales">
+                        <div class="btnredes">
+
+                            <div class="fac">
+                                <a href="https://www.facebook.com/burgerslike/">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                                </a>
+                            </div>
+
+                            <div class="ins">
+                                <a href="https://www.instagram.com/burgerslike/">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-instagram" aria-hidden="true"></span>
+                                </a>
+                            </div>
+
+                            <div class="wha">
+                                <a href="tel:04141985035">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa l fa-whatsapp" aria-hidden="true"></span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div class="informacion">
                     <span class="titulo">Informacion Adicional</span>
-                    <!-- AGREGAR INFORMACION -->
-                    <p class="parrafo">Join the thousands of other restaurants who benefit from having their menus on TakeOff</p>
+                    <p class="parrafo">
+                        En burgers Like, nuestra prioridad es atender a nuestros clientes con 
+                        el mejor servicio por eso nuestro Slogan es "Servicio de reino".<br><br>
+                        No te quedes sin ordenar tu comida. Mantente informado visitando nuestras redes sociales
+                    </p>
                 </div>
+
             </section>
         </div>
 

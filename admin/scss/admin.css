@@ -362,24 +362,25 @@ body .tr .td p.pcantidad {
 
 body .tr .td .estatus {
   cursor: default;
-  font-size: 10px;
+  display: block;
+  width: 100%;
+  font-size: calc(3px + 1vmin);
   color: #ffffff;
   font-weight: 500;
   letter-spacing: 1px;
   border-radius: 3px;
-  padding: 6px 7px;
+  padding: 4px 2px;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-body .tr .td .estatus.En.proceso {
+body .tr .td .estatus.Proceso {
   cursor: wait;
   background-color: #cfa828;
 }
 
-body .tr .td .estatus.En.preparación {
+body .tr .td .estatus.Preparación {
   cursor: wait;
   background-color: #2d8dcc;
-  font-size: 14px;
 }
 
 body .tr .td .estatus.Listo {

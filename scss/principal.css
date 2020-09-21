@@ -645,6 +645,97 @@ body .btncarrito:hover {
   transition: 250ms ease;
 }
 
+body .redesSociales {
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+}
+
+body .redesSociales .btnredes {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .redesSociales .btnredes .fac, body .redesSociales .btnredes .ins, body .redesSociales .btnredes .wha {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  -webkit-transform: rotate(-30deg) skew(25deg);
+          transform: rotate(-30deg) skew(25deg);
+}
+
+body .redesSociales .btnredes .fac:hover span:nth-child(5), body .redesSociales .btnredes .ins:hover span:nth-child(5), body .redesSociales .btnredes .wha:hover span:nth-child(5) {
+  -webkit-transform: translate(20px, -20px);
+          transform: translate(20px, -20px);
+  opacity: 1;
+}
+
+body .redesSociales .btnredes .fac:hover span:nth-child(4), body .redesSociales .btnredes .ins:hover span:nth-child(4), body .redesSociales .btnredes .wha:hover span:nth-child(4) {
+  -webkit-transform: translate(15px, -15px);
+          transform: translate(15px, -15px);
+  opacity: .8;
+}
+
+body .redesSociales .btnredes .fac:hover span:nth-child(3), body .redesSociales .btnredes .ins:hover span:nth-child(3), body .redesSociales .btnredes .wha:hover span:nth-child(3) {
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  opacity: .6;
+}
+
+body .redesSociales .btnredes .fac:hover span:nth-child(2), body .redesSociales .btnredes .ins:hover span:nth-child(2), body .redesSociales .btnredes .wha:hover span:nth-child(2) {
+  -webkit-transform: translate(5px, -5px);
+          transform: translate(5px, -5px);
+  opacity: .4;
+}
+
+body .redesSociales .btnredes .fac:hover span:nth-child(1), body .redesSociales .btnredes .ins:hover span:nth-child(1), body .redesSociales .btnredes .wha:hover span:nth-child(1) {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: .2;
+}
+
+body .redesSociales .btnredes span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 30px !important;
+}
+
+body .redesSociales .btnredes .fac span {
+  background: #3B5999;
+}
+
+body .redesSociales .btnredes .ins span {
+  background: #E4405F;
+}
+
+body .redesSociales .btnredes .wha span {
+  background: #128C7E;
+}
+
 body .dialibre {
   position: relative;
   width: 100%;
@@ -767,8 +858,8 @@ body .contenedor {
   row-gap: 7rem;
   -ms-grid-columns: 20px 1fr 20px;
       grid-template-columns: 20px 1fr 20px;
-  -ms-grid-rows: 700px 400px 1fr 200px;
-      grid-template-rows: 700px 400px 1fr 200px;
+  -ms-grid-rows: 700px 400px 1fr 300px;
+      grid-template-rows: 700px 400px 1fr 300px;
       grid-template-areas: 'inicio inicio inicio' 'acerca acerca acerca' '. comprar .' 'piedep piedep piedep';
 }
 
@@ -1406,7 +1497,7 @@ body .contenedor .inicio .inicio-contenedor {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 250px 20px;
+  padding: 100px 20px;
   overflow: hidden;
   text-align: center;
   background: url("../images/banner.jpg");
@@ -1432,9 +1523,10 @@ body .contenedor .inicio .inicio-contenedor .parrafo {
   z-index: +1;
   display: block;
   font-size: 20px;
-  margin-bottom: 30px;
+  margin: 10px 0;
   font-weight: 400;
-  color: #a0a0a0;
+  color: #c2c2c2;
+  padding: 0 80px;
 }
 
 body .contenedor .inicio .inicio-contenedor .btnin {
@@ -1471,8 +1563,25 @@ body .contenedor .inicio .inicio-contenedor::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000000aa;
+  background: #000000b6;
   z-index: 0;
+}
+
+body .contenedor .inicio .inicio-contenedor .calendario {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+}
+
+body .contenedor .inicio .inicio-contenedor .calendario .infoDias {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+body .contenedor .inicio .inicio-contenedor .calendario .infoDias strong {
+  color: #FE6500;
 }
 
 body .contenedor .acerca {
@@ -1537,7 +1646,7 @@ body .contenedor .acerca .firma {
 
 @media (min-width: 827px) {
   body .contenedor .acerca {
-    padding: 70px 120px;
+    padding: 70px 150px;
   }
 }
 
@@ -3568,8 +3677,8 @@ body .contenedor-ordenes {
   place-items: center;
   -ms-grid-columns: 20px 1fr 20px;
       grid-template-columns: 20px 1fr 20px;
-  -ms-grid-rows: 1fr 200px;
-      grid-template-rows: 1fr 200px;
+  -ms-grid-rows: 800px 200px;
+      grid-template-rows: 800px 200px;
       grid-template-areas: '. ordenes .' 'piedep piedep piedep';
 }
 
@@ -3617,62 +3726,65 @@ body .contenedor-ordenes .ordenes table tbody {
   width: 100%;
   height: 100%;
   background-color: #0f0f0f;
-  color: #a0a0a0;
+  color: #c2c2c2;
 }
 
 body .contenedor-ordenes .ordenes table tbody tr td {
-  padding: 0 10px;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   text-align: center;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td .pnombre {
+body .contenedor-ordenes .ordenes table tbody tr td .producto {
   margin: 0 auto;
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
-  padding: 5px 0;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td .pcantidad {
-  padding: 5px 0;
+body .contenedor-ordenes .ordenes table tbody tr td .producto strong {
+  font-weight: 800;
+  color: #FE6500;
+  font-size: 20px;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus {
   cursor: default;
+  display: block;
+  width: 100%;
   font-size: 16px;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 1px;
   border-radius: 3px;
-  padding: 10px 5px;
+  padding: 4px 2px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus.En.proceso {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus.Proceso {
   cursor: wait;
   background-color: #cfa828;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus.En.preparación {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus.Preparación {
   cursor: wait;
   background-color: #2d8dcc;
-  font-size: 14px;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus.Listo {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus.Listo {
   background-color: #e06f23;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus.Enviado {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus.Enviado {
   background-color: #8c5ab4;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus.Cancelado {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus.Cancelado {
   cursor: not-allowed;
   background-color: #bd3434;
 }
 
-body .contenedor-ordenes .ordenes table tbody tr td:nth-child(4) .estatus.Entregado {
+body .contenedor-ordenes .ordenes table tbody tr td:nth-child(3) .estatus.Entregado {
   background-color: #55a152;
 }
 
@@ -3824,13 +3936,13 @@ body .contenedor-c .formulario-chequear .resumen-grid {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  row-gap: 20px;
+  gap: 20px;
   place-items: center flex-start;
-  -ms-grid-columns: 1fr 100px;
-      grid-template-columns: 1fr 100px;
-  -ms-grid-rows: 40px 40px 40px 80px 150px 50px;
-      grid-template-rows: 40px 40px 40px 80px 150px 50px;
-      grid-template-areas: 'sub subr' 'env envr' 'total totalr' 'mod mod' 'cuenta cuenta' 'ref ref';
+  -ms-grid-columns: 1fr 160px;
+      grid-template-columns: 1fr 160px;
+  -ms-grid-rows: 40px 40px 40px 5px 80px 150px 50px 30px;
+      grid-template-rows: 40px 40px 40px 5px 80px 150px 50px 30px;
+      grid-template-areas: 'sub subr' 'env envr' 'total totalr' 'hr hr' 'mod mod' 'cuenta cuenta' 'ref ref' 'ver ver';
 }
 
 body .contenedor-c .formulario-chequear .resumen-grid .tituloCS {
@@ -3844,6 +3956,7 @@ body .contenedor-c .formulario-chequear .resumen-grid .itemTotal {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: subr;
+  width: 100%;
 }
 
 body .contenedor-c .formulario-chequear .resumen-grid .envioMani {
@@ -3874,10 +3987,20 @@ body .contenedor-c .formulario-chequear .resumen-grid .precioTotal {
   grid-area: totalr;
 }
 
-body .contenedor-c .formulario-chequear .resumen-grid .modalidades-compra {
+body .contenedor-c .formulario-chequear .resumen-grid .hr {
   width: 100%;
   height: 100%;
   -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: hr;
+  background-color: #FE6500;
+}
+
+body .contenedor-c .formulario-chequear .resumen-grid .modalidades-compra {
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: mod;
@@ -3965,23 +4088,23 @@ body .contenedor-c .formulario-chequear .resumen-grid .modalidades-compra .picku
 }
 
 body .contenedor-c .formulario-chequear .resumen-grid .infoBanco {
-  -ms-grid-row: 5;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: cuenta;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   color: #c2c2c2;
 }
 
@@ -3995,8 +4118,40 @@ body .contenedor-c .formulario-chequear .resumen-grid .infoBanco .tituloBanco {
   color: #FE6500;
 }
 
+body .contenedor-c .formulario-chequear .resumen-grid .infoBanco .transferencia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .contenedor-c .formulario-chequear .resumen-grid .infoBanco .pagoMobil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 body .contenedor-c .formulario-chequear .resumen-grid .input {
-  -ms-grid-row: 6;
+  -ms-grid-row: 7;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: ref;
@@ -4022,16 +4177,6 @@ body .contenedor-c .formulario-chequear .resumen-grid .input .numreferencia:focu
           transform: translateY(-150%);
   font-size: 14px;
   color: #ffffff;
-}
-
-body .contenedor-c .formulario-chequear .resumen-grid .input .numreferencia:focus + .label .texto::before, body .contenedor-c .formulario-chequear .resumen-grid .input .numreferencia:valid + .label .texto::before {
-  content: '(Verifique el Nº de Referencia)';
-  position: absolute;
-  width: 300px;
-  height: 100%;
-  top: 0;
-  color: #a0a0a0;
-  right: -135%;
 }
 
 body .contenedor-c .formulario-chequear .resumen-grid .input .numreferencia:focus + .label::after, body .contenedor-c .formulario-chequear .resumen-grid .input .numreferencia:valid + .label::after {
@@ -4079,6 +4224,16 @@ body .contenedor-c .formulario-chequear .resumen-grid .input .label .texto {
   font-weight: 400;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+body .contenedor-c .formulario-chequear .resumen-grid .verificacionR {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: ver;
+  width: 100%;
+  text-align: center;
+  color: #a0a0a0;
 }
 
 body .contenedor-c .formulario-chequear .comprarBtn {

@@ -196,6 +196,9 @@
                                                 $query=mysqli_query($db,$sql);
                                                 $rows=mysqli_fetch_array($query);
                                                 $array_deco = UtilHelper::arrayDecode($rows['carrito']);
+
+                                                $precio  = $rows['precio'];
+                                                $rprecio = number_format($precio,2,",",".");
 											?>
 											
                                                 <tr>
@@ -219,12 +222,17 @@
                                                 
                                                 <tr>
                                                     <td><strong>Precio:</strong></td>
-                                                    <td><center>Bs <?php echo $rows['precio']; ?></center></td>                                                                                          
+                                                    <td><center>Bs <?php echo $rprecio; ?></center></td>                                                                                          
                                                 </tr>
 
                                                 <tr>
                                                     <td><strong>Direccion:</strong></td>
                                                     <td><center><?php echo $rows['direccion']; ?></center></td>                                                                                           
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Modalidad:</strong></td>
+                                                    <td><center><?php echo $rows['modalidad']; ?></center></td>                                                                                           
                                                 </tr>
 
                                                 <tr>

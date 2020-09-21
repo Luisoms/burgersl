@@ -149,8 +149,8 @@
             <td style="border:2px solid #181818;">
               <select name="estatus" required="required" >
                 <option value="">Seleccionar Estatus</option>
-                <option value="En proceso">En proceso</option>
-                <option value="En preparación">En preparación</option>
+                <option value="Proceso">Proceso</option>
+                <option value="Preparación">Preparación</option>
                 <option value="Listo">Listo</option>
                 <option value="Enviado">Enviado</option>
                 <option value="Entregado">Entregado</option>
