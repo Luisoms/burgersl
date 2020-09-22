@@ -84,7 +84,6 @@ body {
         padding: 20px;
         @include displayFlex(space-evenly,center,row);
     }
-
     
     .tr{
         .td{
@@ -138,5 +137,22 @@ body {
                 background-color: #55a152;
             }
         }
+    }
+
+    .agregarContedores {
+        padding: 10px 20px;
+    }
+
+    @include responsivemin(600px){
+        .agregarContedores{padding: 10px 60px;}
+    }
+    @include responsivemin(981px){
+        .agregarContedores{padding: 10px 120px;}
+    }
+    @include responsivemin(1080px){
+        .agregarContedores{padding: 10px 190px;}
+    }
+    @include responsivemin(1500px){
+        .agregarContedores{padding: 10px 240px;}
     }
 }

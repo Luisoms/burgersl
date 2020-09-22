@@ -7,7 +7,7 @@
     row-gap: 40px;
     place-items: center;
     grid-template-columns: 20px 1fr 20px;
-    grid-template-rows: 1fr 200px;
+    grid-template-rows: 1fr 300px;
     grid-template-areas: 
     '. form .'
     'piedep piedep piedep';
@@ -312,7 +312,7 @@
             .parrafo {
                 width: 100%;
                 font-size: 15px;
-                color: color(lt01);
+                color: color(lt02);
             }
         }
     }

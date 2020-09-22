@@ -315,10 +315,11 @@
                     $query_res = mysqli_query($db, "select * from productos LIMIT 24");
                     while ($r = mysqli_fetch_array($query_res)) {
 
+                        $inicioprecio  = $r['precio'];
+                        $rprecioi = number_format($inicioprecio,2,",",".");
+
                         if (empty($_SESSION["user_id"]))
                         {   
-                            $inicioprecio  = $r['precio'];
-                            $rprecioi = number_format($inicioprecio,2,",",".");
 
                             echo '
                                 <a id="carta" class="carta" onclick="checkIngreso()">
@@ -337,7 +338,7 @@
                             echo '
                                 <a id="carta" class="carta" href="productos.php?p_id='.$r['p_id'].'">
                                     <div class="carta-imagen" style="background-image: url(admin/Pro_img/productos/'. $r['img'].');">
-                                        <span class="precio">Bs ' . $r['precio']. '</span>
+                                        <span class="precio">Bs ' . $rprecioi. '</span>
                                     </div>
                                                             
                                     <div class="carta-contenido">
@@ -358,7 +359,7 @@
             <div class="direccion">
                 <span class="titulo"><strong>Dirección:</strong> Urb. Guaiparo, Av. Centurion</span>
                 <span class="titulo"><strong>Correo:</strong> burgerslikeca@gmail.com</span>
-                <span class="titulo"><strong>Telefono:</strong> <a class="link" href="tel:02869315048">02869315048</a></span>
+                <span class="titulo"><strong>Telefono:</strong><a class="link">0286-9315048</a></span>
                 
                 <div class="redesSociales">
                     <div class="btnredes">

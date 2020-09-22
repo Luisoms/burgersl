@@ -227,7 +227,7 @@
                     echo $success; 
                 ?>
 
-                <div class="col-lg-12">
+                <div class="agregarContedores col-lg-12">
                     <div class="card card-outline-primary">
 
                         <div class="card-header">

@@ -138,7 +138,7 @@ if (empty($_SESSION["user_id"])) {
                 <div class="direccion">
                     <span class="titulo"><strong>Dirección:</strong> Urb. Guaiparo, Av. Centurion</span>
                     <span class="titulo"><strong>Correo:</strong> burgerslikeca@gmail.com</span>
-                    <span class="titulo"><strong>Telefono:</strong> <a class="link" href="tel:02869315048">02869315048</a></span>
+                    <span class="titulo"><strong>Telefono:</strong> <a class="link">0286-9315048</a></span>
                     
                     <div class="redesSociales">
                         <div class="btnredes">

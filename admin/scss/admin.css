@@ -399,4 +399,32 @@ body .tr .td .estatus.Cancelado {
 body .tr .td .estatus.Entregado {
   background-color: #55a152;
 }
+
+body .agregarContedores {
+  padding: 10px 20px;
+}
+
+@media (min-width: 600px) {
+  body .agregarContedores {
+    padding: 10px 60px;
+  }
+}
+
+@media (min-width: 981px) {
+  body .agregarContedores {
+    padding: 10px 120px;
+  }
+}
+
+@media (min-width: 1080px) {
+  body .agregarContedores {
+    padding: 10px 190px;
+  }
+}
+
+@media (min-width: 1500px) {
+  body .agregarContedores {
+    padding: 10px 240px;
+  }
+}
 /*# sourceMappingURL=admin.css.map */

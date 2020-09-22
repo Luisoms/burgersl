@@ -229,7 +229,6 @@
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Panel Principal</h3>
                 </div>
-
             </div>
             <!-- End Bread crumb -->
 
@@ -245,12 +244,16 @@
 
 
 
-                    <div class="col-lg-12">
+                    <div class="agregarContedores col-lg-12">
+
                         <div class="card card-outline-primary">
+
                             <div class="card-header">
                                 <h4 class="m-b-0 text-white">Agregar Administrador</h4>
                             </div>
+
                             <div class="card-body">
+
                                 <form action='' method='post' enctype="multipart/form-data">
                                     <div class="form-body">
 
@@ -262,50 +265,34 @@
                                                     <input type="text" name="cr_nombre" class="form-control" placeholder="nombre">
                                                 </div>
                                             </div>
-                                            <!--/span-->
+
                                             <div class="col-md-6">
                                                 <div class="form-group has-danger">
                                                     <label class="control-label">Correo</label>
                                                     <input type="text" name="cr_correo" class="form-control form-control-danger" placeholder="correo">
                                                 </div>
                                             </div>
-                                            <!--/span-->
+
                                         </div>
-                                        <!--/row-->
 
-                                        <!--/span-->
-
-                                        <!--/span-->
-                                    </div>
-                                    <!--/row-->
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Contraseña</label>
-                                                <input type="text" name="cr_clave" class="form-control form-control-danger" placeholder="contraseña">
+                                        <div style="display: flex; justify-content: center; align-items: center;" class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Contraseña</label>
+                                                    <input type="text" name="cr_clave" class="form-control form-control-danger" placeholder="contraseña">
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Codigo</label>
-                                                <input type="text" name="codigo" class="form-control form-control-danger" placeholder="codigo">
-                                            </div>
+                                        <br>
+                                        <div class="form-actions">
+                                            <input type="submit" name="submit1" class="btn btn-success" value="Guardar">
+                                            <a href="dashboard.php" class="btn btn-inverse">Cancelar</a>
                                         </div>
                                     </div>
-                                    <!--/span-->
-
-
-
-                                    <!--/span-->
+                                </form>
                             </div>
                         </div>
-                        <div class="form-actions">
-                            <input type="submit" name="submit1" class="btn btn-success" value="Guardar">
-                            <a href="dashboard.php" class="btn btn-inverse">Cancelar</a>
-                        </div>
-                        </form>
-                    </div>
+                    </div>      
                 </div>
             </div>
             <!-- End PAge Content -->

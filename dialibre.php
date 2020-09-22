@@ -26,7 +26,7 @@ session_start();
         <div class="targeta">
             <span class="alerta" data-text="OPPS!">OPPS!</span>
             <span class="titulo">Lo sentimos es dia libre</span>
-            <span class="parrafo">Horario de servicio:<br><strong>Jueves - Domingo 8am a 6pm</strong></span>
+            <span class="parrafo">Horario de servicio:<br><strong>Jueves a Domingo de 5:00pm - 10:00pm</strong></span>
         </div>
     </div>
 

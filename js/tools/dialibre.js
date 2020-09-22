@@ -1,4 +1,4 @@
-/* var d = new Date();
+var d = new Date();
 hoy = d.getDay();
 
 function evaluarDia(reporte){
@@ -7,4 +7,4 @@ function evaluarDia(reporte){
     }
 }
 
-evaluarDia(hoy); */
+evaluarDia(hoy);

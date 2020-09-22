@@ -54,10 +54,9 @@
                 z-index: +1;
                 display: block;
                 font-size: 20px;
-                margin: 10px 0;
                 font-weight: 400;
                 color: color(lt02);
-                padding: 0 80px;
+                padding: 10px 80px;
             }
 
             .btnin {
@@ -101,6 +100,25 @@
                     }
                 }
             }
+
+            @include responsivemin(827px){
+                .parrafo{padding: 10px 80px;}
+            }
+            @include responsivemin(981px){
+                .parrafo{padding: 10px 130px;}
+            }
+            @include responsivemin(1126px){
+                .parrafo{padding: 10px 180px;}
+            }
+            @include responsivemin(1239px){
+                .parrafo{padding: 10px 230px;}
+            }
+            @include responsivemin(1357px){
+                .parrafo{padding: 10px 360px;}
+            }
+            @include responsivemin(1500px){
+                .parrafo{padding: 10px 480px;}
+            }
         }
     }
 
@@ -134,7 +152,7 @@
             font-weight: 300;
             text-align: center;
             font-style: italic;
-            color: color(lt01);
+            color: color(lt02);
             padding: 20px 0;
         }
 
@@ -378,7 +396,7 @@
             .parrafo {
                 width: 100%;
                 font-size: 15px;
-                color: color(lt01);
+                color: color(lt02);
             }
         }
     }
